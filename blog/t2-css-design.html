@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<head>
+  <title>Technical Blogs Week #2</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="your-stylesheet-link-here.css">
+</head>
+
+<main>
+  <h1>The Differences between Relative, Absolute, and Fixed Position</h1>
+  <h2>Technical Blog for Week 2</h2>
+  <h4>June 1st, 2015</h4>
+
+  <section>
+    <p>
+      One of the advantages CSS offers is its ability to position different html elements on the web page.  This blog aims to explain the four different position methods in CSS.
+    </p>
+    <h3> Static Positioning </h3>
+    <p>
+      The default position of HTML elements is the "static" position.  This means that the element will be positioned according to the flow of the page.  If one sets the position to "static" or does not specify a position for an element, then this element will not be affected by the "top", "bottom", "left", or "right" properties.
+    </p>
+    <h3>Fixed Positioning </h3>
+    <p>
+    If an element is given a "fixed" position, then this means that the element will be positioned relative to the browser <span style="font-style: italicized"> window </span>.  This means that even if you scroll through the window, that element will remain in a fixed position.
+    </p>
+    <p>
+        Whereas elements in a static position are "immune" to the effects of top, right, bottom, and left properties, fixed elements can be positioned on the browser window using these properties.
+    </p>
+    <p>When an element is given a fixed position, it is removed from the normal flow.  This means that the other elements behave like the fixed positioned element does not exist.  As a result, these fixed positioned elements can overlap other elements.</p>
+
+    <h3> Relative Positioning </h3>
+    <p> A relative positioned element is positioned relative to its normal position.  This allows you to use the top, right, bottom, and left properties to position the element relative to where it would have fallen in the normal flow (i.e., had position not been set or been set to static).</p>
+    <p> As will be better understood after the following section, elements are sometimes given the relative position just so that it can be used a placeholder for a child element that is given the "absolute" position. </p>
+  <h3> Absolute Positioning </h3>
+  <p> An element given the absolute position is positioned relative to the nearest "positioned" ancestor.  A "positioned" element is defined as an element that has any position property besides "static". </p>
+  <p> If an element with an absolute position does not have any positioned ancestors, it uses the document body as its reference point </p>
+
+      <!-- copy and paste as many sections as you want to add paragraphs -->
+  </section>
+  <h1>Margins, Borders, and Padding</h1>
+  <h2>Bonus Technical Blog #1 for Week 2</h2>
+  <h3> June 1st, 2015 </h3>
+  <section>
+    <p> The CSS Box Model is a design model that treats all HTML elements to be "boxes." This box consists of (from most central to most peripheral):
+      <ul>
+        <li>Content: Where the text and images appear</li>
+        <li>Padding: Refers to the area surrounding the content (i.e. the area between the content and the border).</li>
+        <li>Border: This surrounds the padding and the content.</li>
+        <li>Margin: This is the area outside the border.</li>
+      </ul>
+    </p>
+  </section>
+  <h1> The Display Properties: Inline vs Inline-Block vs. Block </h1>
+  <h2> Bonus Technical Blog #2 for Week 2 </h2>
+  <h4> June 1st, 2015 </h4>
+  <p> In the blog post above, we explained how each HTML element is a rectangular box.  These rectangular boxes have "display" properties that will determine how they interact with each other.  We will go through the major display property values. </p>
+  <h3>Inline</h3>
+  <p>The default value for elements is "inline".  An inline element can wrap some text inside a paragraph without disrupting the flow of that paragraph. </p>
+  <p>Inline elements can accept margin and padding properties, but they will ignore the "top" and "bottom" aspects of these properties.  They will also ignore width and height properties entirely.</p>
+  <p> The common examples of the inline elements are:
+    <ul>
+      <li>Span</li>
+      <li>em</li>
+      <li>b</li>
+    </ul>
+  <h3>Inline-Block</h3>
+  <p> An element set to inline-block is like inline in the sense that it is set "inline" with the natural flow of the text.  The major difference is that you can use the width and height properties </p>
+  <h3>Block</h3>
+    <p> Block elements start on a new line automatically (and are therefore not "inline") and stretch out the left and right as far as it can. </p>
+    <p> There are a couple block-level elements that are automatically set to block:
+      <ul>
+        <li>div</li>
+        <li>p</li>
+        <li>header</li>
+        <li>footer</li>
+        <li>section</li>
+      </ul>
+    </p>
+  </section>
+</main>
