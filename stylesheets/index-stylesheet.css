@@ -1,0 +1,43 @@
+* {
+  background-color:#F5F5DC;
+  color: #404040;
+}
+#picture {
+  text-align: center;
+  position:relative;
+  top: 50px;
+  margin-bottom: 150px;
+}
+
+#Header {
+  text-align: center;
+  margin-bottom: 75px;
+}
+
+#Header h1 .First_Letter {
+  font-size:2em;
+}
+
+.socialnet {
+  text-align:center;
+  margin-bottom:75px;
+}
+
+.socialnet div {
+  position: relative;
+  display:inline;
+  margin-right: 30px;
+
+}
+.socialnet div img {
+  width:3em;
+}
+
+.Footer {
+  text-align:center;
+}
+
+.Footer div {
+  display:inline;
+  margin-right:30px;
+}
