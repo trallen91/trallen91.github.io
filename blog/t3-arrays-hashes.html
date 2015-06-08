@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+  <title>Travis Allen Technical Blog</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="your-stylesheet-link-here.css">
+</head>
+
+<main>
+  <h1>Arrays vs Hashes</h1>
+  <h2>Week 3 Technical Blog</h2>
+  <h4>June 7 2015</h4>
+
+  <section>
+    <p>
+      If you were to go grocery shopping, you would want to ensure that you had written down all of the items that you needed.  One option would be to write each item on a separate post-it note.  A far more practical approach would be to organize these items into a list.
+    </p>
+    <p> This analogy can be extended to programming, because often times it makes sense to store objects ("items") into an indexed list. There are two types of indexed list in Ruby: The Array and the Hash </p>
+    <h3> The Array </h3>
+    <p> An array is an organized list of objects that are stored in distinct, numbered slots.  Because these objects are organized into numbered slots, they can be accessed using an integer "key".  For example, you can access the first object in the list by simply asking for "item 0" in Ruby (NOTE: the first slot in an array is "slot 0", the second is "slot 1" and so on). </p>
+    <p> Let's extend the concept of the array to the grocery list analogy.  If, for whatever reason, you were being told that you had to pick up the items in a specific order, you would probably want to compose the list from top to bottom, where the first line was the first item you had to grab, and the last line was the last item you had to grab.  This way, if you had to identify the third item that you were going to get, you would "access" it by looking at the third line.  This demonstrates the advantage of an array: you can access the object just by knowing where it is organized on the list </p>
+    <h3> The Hash </h3>
+    <p> Whereas the array is organized and numerical, the hash is a collection that is jumbled together.Instead of the object being associated with a specific slot, it is instead associated with any arbitrary object that you select to be the "key."" </p>
+    <p>While it might intuitively seem that an ordered list is better, there are scenarios in which you would not need that order, and a more flexible "key" would be preferable.  Let's consider the grocery list analogy to try to understand. </p>
+    <p> Imagine a scenario in which you now very little about food, and yet you are being forced to go to the grocery store to pick up ingredients.  If you had no idea what "kale" or "grey poupon" was, you would have a tough time finding these items just randomly walking around.  It therefore might help you if beforehand, you wrote a little word next to each item on the list that helped you identify it.  For example, you would write "vegetable" next to "kale".  When you got to the grocery store, you could easily access where you placed the "kale" item by looking for the word vegetable.  This should demonstrate the importance of the hash: sometimes the actual "location" of the object is unimportant, and having another object that you choose (the key) to help you locate that object is more useful.</p>
+  </section>
+</main>
