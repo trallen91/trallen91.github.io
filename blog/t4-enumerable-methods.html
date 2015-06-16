@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+  <title>Travis Allen Technical Blog</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog_stylesheet.css">
+</head>
+
+<main>
+  <h1>Enumerable method: <code>group_by</code></h1>
+  <h2>Technical Blog #4</h2>
+  <h4>June 14th, 2015</h4>
+
+  <section>
+    <p>
+      Imagine a scenario in which you are having twins.  Your wife and you agree on most things, but have always had different ideas on what constitutes a good baby name -- you have always been partial to the short, 3 letter names, while your wife has always felt that 8 character names were better.  You have agreed that each of you will get to name one of the babies.
+    </p>
+    <p>
+      Your friend at the US Census Bureau has sent you an array, called <code>names</code> that he exctracted from a database of all of the existing names in America.  You would like to organize this collection based on name length so that you can easily see all the names that are 3 letters long, and your wife can see all of the names that are 8 letters long.  Luckily for you, the <code>group_by</code> method can be used on your enumerable!
+    </p>
+    <p> The <code>group_by</code> method works by acting on a collection object (in this case an array) and returning a hash.  The key of this hash will be the result of whatever code block is specified after <code>group_by</code>, and the value of this hash will be an array of all of the original items of the collection object that share the same resultant key.  This is best explained by looking at a group_by call on your <code>names</code> array.
+    </p>
+    <p> <code>names.group_by {|name| name.length}</code></p>
+    <p>would return the following (hypotehtical) hash: </p>
+    <p> <code>{2 => ["Bo", "Jo",...], 3 => ["Boa", "Jon"...], 8 => ["Jonathan", "Philippo"...} </code></p>
+    <p> <code>group_by</code> works by going through each item in the collection and performing the code block on all of them -- in this case finding their length.  The length is now the key in the hash, and the value is an array of all the names from the original array that are of that length. </p>
+    <p> Now that you have organized these names into a hash based on name length, you can easily see the three-letter names grouped together and your wife can easily see all of the eight-letter names grouped together. </p>
+  </section>
+  <div class = "footer">
+    <a href = "../blog-list.html">Back to Blog List </a>
+  </div>
+</main>
