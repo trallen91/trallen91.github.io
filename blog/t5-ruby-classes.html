@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+  <title>Travis Allen Technical Blog</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog_stylesheet.css">
+</head>
+
+<main>
+  <h1>Ruby Classes</h1>
+  <h2>Technical Blog #5</h2>
+  <h4>June 17th, 2015</h4>
+
+  <section>
+    <p>
+    Classes in Ruby can be seen as a way to organize many objects that share similar behaviors and characteristics.  In order to understand classes and why they are useful, we will first look at some classes that are built in to Ruby, and then we will create our own class.
+    </p>
+    <h3> Built-in Classes </h3>
+    <p>
+      If you have had any basic experience with Ruby, you have already dealt with classes, whether you know it or not.  <code>String</code>, <code>Integer</code>, <code>Array</code>, and <code>Hash</code> are all examples of classes that have been built-in to Ruby.  We'll take a look at the <code>String</code> class to help us understand what a class is.
+    </p>
+    <p>
+      You have probably already created a string variable before, something along the lines of <code>my_name = "Travis"</code>. Ruby is smart enough to figure out from those quotation marks that the <code>my_name</code> variable represents a string.  A more precise description of what is happening is that the <code>my_name</code> variable being created is an <span class ="italics">instance</span> of the <code>String</code> class.  The advantage of this is that, simply by creating a new string object, you can automatically do many methods on this new object that are already built in to the <code>String</code> class.  All you have to do to witness this is call the <code>methods</code> method on your new variable.  You should get something like this:
+    </p>
+    <p><code>[:<=>, :==, :===, :eql?, :hash, :casecmp, :+, :*, :%, :[], :[]=, :insert, :length, :size, :bytesize, :empty?, :=~, :match, :succ, :succ!, :next, :next!, :upto, :index, :rindex, :replace, :clear, :chr, :getbyte, :setbyte, :byteslice, :scrub, :scrub!, :freeze, :to_i, :to_f, :to_s, :to_str, :inspect, :dump, :upcase, :downcase, :capitalize, :swapcase, :upcase!, :downcase!, :capitalize!, :swapcase!, :hex, :oct, :split, :lines, :bytes, :chars, :codepoints, :reverse, :reverse!, :concat, :<<, :prepend, :crypt, :intern, :to_sym, :ord, :include?, :start_with?, :end_with?, :scan, :ljust, :rjust, :center, :sub, :gsub, :chop, :chomp, :strip, :lstrip, :rstrip, :sub!, :gsub!, :chop!, :chomp!, :strip!, :lstrip!, :rstrip!, :tr, :tr_s, :delete, :squeeze, :count, :tr!, :tr_s!, :delete!, :squeeze!, :each_line, :each_byte, :each_char, :each_codepoint, :sum, :slice, :slice!, :partition, :rpartition, :encoding, :force_encoding, :b, :valid_encoding?, :ascii_only?, :unpack, :encode, :encode!, :to_r, :to_c, :unicode_normalize, :unicode_normalize!, :unicode_normalized?, :>, :>=, :<, :<=, :between?, :nil?, :!~, :class, :singleton_class, :clone, :dup, :itself, :taint, :tainted?, :untaint, :untrust, :untrusted?, :trust, :frozen?, :methods, :singleton_methods, :protected_methods, :private_methods, :public_methods, :instance_variables, :instance_variable_get, :instance_variable_set, :instance_variable_defined?, :remove_instance_variable, :instance_of?, :kind_of?, :is_a?, :tap, :send, :public_send, :respond_to?, :extend, :display, :method, :public_method, :singleton_method, :define_singleton_method, :object_id, :to_enum, :enum_for, :equal?, :!, :!=, :instance_eval, :instance_exec, :__send__, :__id__]</code>
+    <p> Imagine having to define all of these methods every time you wanted to created a new object!  Instead, <code>my_name</code>, being created as an instance of the <code>String</code> class, inherits all of these behaviors.</p>
+    <h3> Creating Our Own Class </h3>
+    <p>To make classes a little less abstract, let's come up with a "Real World" example of how a class might work.  In this example, we will make a class for "Athletes" </p>
+    <p>If you think about it, athletes share many fundamental characteristics.  They have a name, an age, a team, a salary, and a professional sport that they play.  While these characteristics vary from one athlete to the next, we still tend to group athletes together in the same category.  They also share common behaviors -- I think it's safe to say that all athletes exercise.  Given these shared characteristics and behaviors, it makes sense to create a class for athletes. </p>
+    <p> To create the athlete class, we would do something like this: </p>
+<pre><code>class Athlete
+end </pre></code>
+    <p>When we create a new athlete (an instance of the class Athlete), we want to be able to specify some of their characteristics.  We are aided by the <code>initialize</code> method that is a special method that can be defined for your class.  We will define it with the characteristics we mentioned above as arguments.  Take a look at the following code:</p>
+<pre><code>class Athlete
+
+def initialize(name, age, team, salary,sport)
+  @name = name
+  @age = age
+  @team = team
+  @salary = salary
+  @sport = sport
+end
+
+end</pre></code>
+
+  <p>Much of this may sound foreign, but look what it allows you to do when you create a new athlete, using the following syntax:</p>
+  <p><code> kobe = Athlete.new("Kobe Bryant", 36, "Los Angeles Lakers", "23 million")</code></p>
+  <p> You have now created a new instance of the Athlete class called kobe, and endowed him with certain attributes.  The beauty of this is that you can create as many instances of the Athlete class as you want, such as for Peyton Manning, Tiger Woods, Derek Jeter, etc., and endow them all with their specific attributes. </p>
+  <p> We also said that, in addition to sharing certain characteristics, athletes also share certain behaviors.  Let's extend this to our Athlete class, using the updated code below:</p>
+<pre><code>class Athlete
+
+def initialize(name, age, team, salary,sport)
+  @name = name
+  @age = age
+  @team = team
+  @salary = salary
+  @sport = sport
+end
+
+def exercise
+  puts "#{name} loves to exercise"
+end
+
+end</pre></code>
+  <p>We have now created an <code>exercise</code> method that you can call on any instance of the Athlete class.  You can now type <code>kobe.exercise</code> and expect to get the following output: </p>
+<pre><code>=>Kobe Bryant loves to exercise</code></pre>
+
+<p>While this example is a very simple class (and not all that practical in actual programming), I hope it indicates how classes can help organize similar objects with similar attributes and behaviors!</p>
+
+  </section>
+  <div class = "footer">
+    <a href = "../blog-list.html">Back to Blog List </a>
+  </div>
+</main>

@@ -18,3 +18,7 @@ h4 {
 .footer {
   text-align: center;
 }
+
+.italics {
+  font-weight: italic;
+}
