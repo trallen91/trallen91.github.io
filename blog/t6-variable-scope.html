@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<head>
+  <title>Travis Allen Technical Blog</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog_stylesheet.css">
+</head>
+
+<main>
+  <h1>Ruby Classes</h1>
+  <h2>Technical Blog #6</h2>
+  <h4>June 29th, 2015</h4>
+
+  <section>
+    <p>
+    Ruby programs can generally be sub-divided into different "contexts".  There are class- definition blocks, module-definition blocks, method definition-blocks and the top level (any code not enclosed within any of these other blocks).  Now that we have this general idea of a Ruby program's structure, we can delve into the idea of variable scope.</p>
+
+    <p>The scope of a variable refers to its visibility in a program.  By "visibility", we mean how many and which contexts can see this variable.  We will start by discussing the kind of variables that have the largest scope, and then work our way towards variables with more limited scopes.
+    </p>
+    <h3> Global Variables</h3>
+    <p>
+      As the name might suggest, global variables extend the widest; they can be accesed anywhere in the program, regardless of the context.
+    </p>
+    <p> To create a global variable, you write the variable name, preceded by a <code>$</code>.  For example <code>$var_name</code> would be identified by ruby as a global variable.  To illustrate how global variables work, let's take a look at the following example:</p>
+<pre><code>
+$var_name = "This is the initial value"
+class ChangeName
+  $var_name = "This is the new value"
+end
+
+puts $var_name</pre></code>
+
+<p> The output of this code will be <code>"This is the new value"</code>, demonstrating that the global variable <code>$var_name</code> can be accessed within a class, despite being initialized in the top-level context. </p>
+<p> Although global variables are alluring due to how easily and universally they can be accessed, they are actually pretty ill-advised.  The idea that <span class="italics">any</span> object can access this variable runs afoul of the principles of object-oriented programming, specifically the idea that objects should not share too much information with one another.
+
+<h3>Constants</h3>
+<p>Constants have some similarities to global variables in that they can be reached from any context.  Take a look at the following example to help understand what we mean:
+<pre><code>
+class A
+  class B
+    X = "This is a constant"
+  end
+end
+
+puts A::B::X
+</pre></code>
+<p> The output of this will be <code>"This is a constant"</code>.  This is significant because the <code>puts</code> statement is written in the top level, but by specifying the path to get to the constant <code>X</code>, you can still reach it. </p>
+<p>However, unlike global variables, the value of a constant of a given name is not necessarily the same from one scope to the next.  Let's use the structure we used for the global variable before, but instead use constants to illustrate the difference:
+<pre><code>
+CONSTANT = "This is the value of CONSTANT in the top level context"
+class C
+  CONSTANT = "This is the value of CONSTANT in the class-level context"
+end
+
+puts CONSTANT
+</pre></code>
+<p> The output of this code will be <code> This is the value of CONSTANT in the top level context </code>, showing us that because our <code> puts </code> statement is in the top-level context, we will output the constant that was created in the top-level context, and ignore the one that was created within <code>Class C</code></p>
+
+<h3>Class Variables</h3>
+<p>A class variable is visible only to its class hierarchy and instances of that class.  Let's take a look at an (unrealistic, but demonstrative) example of a class variable:</p>
+
+<pre><code>
+class C
+  @@class_var = "This is a class variable"
+  def get_class_var
+    puts @@class_var
+  end
+
+  def C.get_class_var
+    puts @@class_var
+  end
+end
+
+c = C.new
+puts c.get_class_var
+puts C.get_class_var
+puts @@class_var
+</pre></code>
+<p> The output of this code will be:
+  <pre><code>
+    This is a class variable
+    This is a class variable
+    Testing.rb:16:warning: class variable access from toplevel
+    Testing.rb:16:in "< main >": uninitialized class variable @@class_var in Object (NameError)
+  </pre></code>
+This illustrates that the both the instance of C (represented by the variable c) and the class C can access the @@class_var variable, but when you try to access it from the toplevel, you get an error. </p>
+
+
+  </section>
+  <div class = "footer">
+    <a href = "../blog-list.html">Back to Blog List </a>
+  </div>
+</main>
