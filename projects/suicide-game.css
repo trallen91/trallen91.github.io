@@ -1,0 +1,31 @@
+body {
+  background: linen;
+  width: 100%;
+  font-size: 100%;
+}
+
+#startgame {
+  text-align: center;
+  margin: 200px auto;
+}
+
+button {
+  width: 50%;
+  height: 100px;
+  font-size: x-large;
+}
+
+button:hover {
+  background: blue;
+  color: white;
+}
+
+
+
+#stamina {
+  text-align:left;
+}
+
+#progress {
+  text-align:left;
+}

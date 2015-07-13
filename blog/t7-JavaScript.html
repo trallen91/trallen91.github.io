@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+  <title>JavaScript</title>
+  <link rel="stylesheet" type = "text/css" ref="../stylesheets/blog_stylesheet.css">
+</head>
+
+<main>
+  <h1>JavaScript vs Ruby <h1>
+  <h2>Technical Blog #7 </h2>
+  <h4>July 12, 2015 </h4>
+
+  <section>
+  <p> After just one week with JavaScript, I have noticed a number of its fundamental differences from Ruby.  The one I will focus on today is the difference in the iteration process between the two.  First we'll look at some fundamentals of iteration and then see how the languages differ.</p>
+
+  <p> When iterating, there are three parameters to consider in the loop:
+    <ul>
+      <li>State: Whenever there is an iteration, there is a variable that changes from one loop to the next.  The "state" refers to the current state of that variable.</li>
+      <li>Condition: So as to prevent an infinite loop, a condition needs to be placed for when the looping will stop. </li>
+      <li>Iterator:  Refers to how the aforementioned variable changes after each loop. Without an iterator, the state of the variable would not change and would likely result in an infinite loop.</li>
+    </ul>
+  </p>
+
+  <p> Let's first look at a <code>for</code> loop in JavaScript and see these parameters in action. </p>
+
+  <p>
+    <pre><code>
+    for (var i = 0; i < 11; i++) {
+        consolelog(i);
+    };
+    </code></pre>
+  </p>
+  <p> The first portion of the for statement is declaring a variable called "i" and assigning it an initial value of 0.  This is therefore its initial state.  The second portion ("i < 11") is the condition of the loop:  it will loop so long as "i" is less than 11.  Lastly, the iterator is described in the last part where it reads "i++".  This is saying that after each loop, add 1 (the ++ means "add one") to the value of i.  This therefore changes the state of i after each loop.  The portion contained within the {} brackets is what happens during each loop.  In this case, it is printing "i" to the screen.  Therefore, the purpose of this loop is print out 0 to 10 to the screen.  Now let's look at how we might do this in Ruby. </p>
+  <p> Here is one way we might get the same result as above in Ruby: </p>
+  <p>
+  <pre><code>
+    (0..10).each {|i| puts i}
+  </code></pre>
+</p>
+  <p> While the fundamentals of this loop are the same, you can see immediately that they aren't as neatly and explicitly stated. </p>
+  <p> Once again, "i" is the the variable whose state will be changing from loop to loop.  Its initial state is once again 0, which is indicated by the fact that 0 is the first integer in the range that is being iterated over.  The condition is implied in the range as well -- it is going to go until the integer is equal to 10.  Lastly, the iterator is implicit as well.  When looping over a range, it is implied that you go over each integer between (and including) the two values in the parentheses.  The "puts" statement, like the console.log, will print the value of i to the screen each time it goes through the loop.</p>
+  <p> Thus, a fundamental difference between JavaScript and Ruby loops is that the parameters in JavaScript are much more explicitly stated, whereas these parameters are built-in to the Ruby syntax already and therefore do not need to be explicitly stated. </p>
+</section>
+  <div class = "footer">
+    <a href = "../blog-list.html">Back to Blog List </a>
+  </div>
+</main>
+</html>
+
+
+
+
+
