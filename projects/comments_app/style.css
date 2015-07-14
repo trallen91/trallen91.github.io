@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header, main, footer {
+  min-width: 855px;
+}
+
+.comment-input {
+  float: left;
+  width: 285px;
+}
+
+.comments {
+  float: right;
+  width: 570px;
+}
+
+.comments p:nth-child(even) {
+  background: lavender;
+  border-radius: 25px;
+}
+
+.comments p:nth-child(odd){
+  background: gainsboro;
+  border-radius: 25px;
+}
