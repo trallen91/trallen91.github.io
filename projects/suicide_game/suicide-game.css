@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header, main, footer {
+  min-width: 855px;
+}
+
+.name-input {
+  float:left;
+  width:285px;
+}
+
+.racetrack {
+  float:right;
+  width:570px;
+}
+
+.racetrack p:nth-child(even) {
+  background: lavender;
+}
+.racetrack p:nth-child(odd) {
+  background: gainsboro;
+}
