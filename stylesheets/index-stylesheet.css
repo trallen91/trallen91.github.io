@@ -1,12 +1,38 @@
 * {
-  background-color:#F5F5DC;
+  background-color:#FFFACD;
   color: #404040;
 }
+
+/*header, main, footer {
+  min-width:855px;
+}
+
+header .container {
+  max-width: 855px;
+  margin: auto;
+}
+
+header {
+  overflow: auto;
+}
+
+header info {
+  float:right;
+  width:570px;
+}
+
+header img {
+  float:left;
+  width:285px;
+}*/
+
 #picture {
   text-align: center;
   position:relative;
   top: 50px;
-  margin-bottom: 150px;
+  padding-bottom: 50px;
+  margin-bottom: 100px;
+  border-bottom: 1px solid gray;
 }
 
 #Header {
@@ -18,9 +44,51 @@
   font-size:2em;
 }
 
+
+.tabs {
+  text-align:center;
+}
+
+.tabs a span {
+  display: inline-block;
+  border-radius:5px 5px 0 0;
+  width: 100px;
+  margin-right: 10px;
+  text-align: center;
+  background: #ADD8E6;
+  padding: 5px;
+}
+
+.tabs a span.active {
+  background: #E6E6FA;
+  font-weight: bold;
+}
+
+.content {
+  text-align:left;
+  border:1px solid #E6E6FA;
+  margin: auto;
+  width: 50%;
+  background: #E6E6FA;
+}
+
+.content p {
+  background: #E6E6FA;
+  text-align: center;
+}
+
+.content p a {
+  background: #E6E6FA;
+  color: #ed490a;
+}
+
+.content p a:hover {
+  color: #800080;
+}
+
 .socialnet {
   text-align:center;
-  margin-bottom:75px;
+  margin-top: 25px;
 }
 
 .socialnet div {
@@ -33,11 +101,4 @@
   width:3em;
 }
 
-.Footer {
-  text-align:center;
-}
 
-.Footer div {
-  display:inline;
-  margin-right:30px;
-}
