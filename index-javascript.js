@@ -1,6 +1,12 @@
 var main = function() {
   "use strict";
 
+  //this fades in the image in the beginning
+  var $img = $("<img>").hide();
+  $img.attr("src", "../ChessPhoto.JPG")
+  $("#picture").append($img);
+  $img.fadeIn();
+
 
   var aboutMe = "I am an ambitious full-stack web developer that is always looking for a mental challenge.  I never want to stop learning and am making a career out of this pursuit."
 
