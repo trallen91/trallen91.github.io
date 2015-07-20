@@ -1,0 +1,14 @@
+[
+{
+  "description": "Get groceries",
+  "tags": ["shopping", "chores"]
+},
+{
+  "description": "Answer emails",
+  "tags": ["work"]
+},
+{
+  "description": "clean room",
+  "tags": ["chores"]
+}
+]
