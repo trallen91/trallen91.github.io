@@ -1,11 +1,9 @@
 var main = function() {
   "use strict";
-
+  var fadeInTime = 1000
+  var delayCount = [fadeInTime, 3000, 4000]
   //this fades in the image in the beginning
-  var $img = $("<img>").hide();
-  $img.attr("src", "../ChessPhoto.JPG")
-  $("#picture").append($img);
-  $img.fadeIn();
+  $("#picture").hide().fadeIn(fadeInTime)
 
 
   var aboutMe = "I am an ambitious full-stack web developer that is always looking for a mental challenge.  I never want to stop learning and am making a career out of this pursuit."
@@ -16,8 +14,11 @@ var main = function() {
 
   var contact = ["Email: Travis.William.Allen@gmail.com", "Phone: 347-599-8150", "Social Media: See links below!"]
 
+  $("#Header").hide().delay(fadeInTime).fadeIn(fadeInTime);
 
   $(".tabs span").toArray().forEach(function(element) {
+      $(element).hide().delay(fadeInTime*2).fadeIn(fadeInTime)
+      $("body .content").hide()
       $(element).on("click", function() {
 
         var $content;
@@ -28,21 +29,49 @@ var main = function() {
 
         if($(element).parent().is(":nth-child(1)")) {
             $("body .content").append($("<p>").text(aboutMe));
+            $("body .content").fadeIn();
         } else if ($(element).parent().is(":nth-child(2)")) {
             $("body .content").append($("<p>").text(myProjectsText));
             $("body .content").append($("<p><a href = 'projects/projects_index.html'>- My Projects -</a></p>"));
+            $("body .content").hide().fadeIn();
         } else if ($(element).parent().is(":nth-child(3)")) {
             $("body .content").append($("<p>").text(blogText));
             $("body .content").append($("<p><a href = 'blog-list.html'>- Blog Index -</a></p>"));
+            $("body .content").hide().fadeIn();
         } else if ($(element).parent().is(":nth-child(4)")) {
             contact.forEach(function (info) {
               $("body .content").append($("<p>").text(info));
+              $("body .content").hide().fadeIn();
             });
           }
 
 
       });
+
+      $(element).on('mouseover', function(event){
+          event.preventDefault()
+          $(element).css({"fontSize":"1.25em", "fontWeight": "bold"})
+      });
+
+      $(element).on('mouseleave', function(event) {
+        event.preventDefault()
+        $(element).css({"fontSize": "1em", "font-weight": "normal"})
+      });
+
   });
+
+//fades in social media links and increases size of social media link when it is hovered over
+  $('.socialnet div img').hide().delay(fadeInTime*3).fadeIn(1000);
+
+  $('.socialnet div img').on('mouseover', function(event){
+    event.preventDefault()
+    $(this).css({"width": "4em"});
+  });
+//returns social media logo to normal size after you leave
+  $('.socialnet div img').on('mouseleave', function(event){
+    event.preventDefault()
+    $(this).css({"width": "3em"})
+  })
 
 };
 
