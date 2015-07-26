@@ -32,28 +32,28 @@ var main = function(toDoObjects) {
       } else if ($element.parent().is(":nth-child(3)")) {
           console.log("the tags tab was clicked!");
 
-          var organizedByTag = [
-          {
-            "name": "shopping",
-            "toDos": ["clothes"]
-          },
-          {
-            "name": "coding",
-            "toDos": ["learn Python", "improve Front-End skills"]
-          }];
+          // var organizedByTag = [
+          // {
+          //   "name": "shopping",
+          //   "toDos": ["clothes"]
+          // },
+          // {
+          //   "name": "coding",
+          //   "toDos": ["learn Python", "improve Front-End skills"]
+          // }];
 
-          organizedByTag.forEach(function(tag) {
-            var $tagName = $("<h3>").text(tag.name),
-              $content = $("<ul>");
+          // organizedByTag.forEach(function(tag) {
+          //   var $tagName = $("<h3>").text(tag.name),
+          //     $content = $("<ul>");
 
-              tag.toDos.forEach(function(description) {
-                var $li = $("<li>").text(description);
-                $content.append($li);
+          //     tag.toDos.forEach(function(description) {
+          //       var $li = $("<li>").text(description);
+          //       $content.append($li);
 
-              });
-              $("main .content").append($tagName);
-              $("main .content").append($content);
-          });
+          //     });
+          //     $("main .content").append($tagName);
+          //     $("main .content").append($content);
+          // });
       }
       else if ($element.parent().is(":nth-child(4)")) {
           $toDoTextBox = $("<input>");

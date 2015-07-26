@@ -14,11 +14,15 @@ var main = function() {
 
   var contact = ["Email: Travis.William.Allen@gmail.com", "Phone: 347-599-8150", "Social Media: See links below!"]
 
+//fades in the header
   $("#Header").hide().delay(fadeInTime).fadeIn(fadeInTime);
-
+//converts tabs into an array, then does something for each of them
   $(".tabs span").toArray().forEach(function(element) {
+    //fades in all tabs
       $(element).hide().delay(fadeInTime*2).fadeIn(fadeInTime)
+    //keeps body content hidden until a tab gets clicked on
       $("body .content").hide()
+    //event that occurs when a click occurs
       $(element).on("click", function() {
 
         var $content;
@@ -36,7 +40,7 @@ var main = function() {
             $("body .content").hide().fadeIn();
         } else if ($(element).parent().is(":nth-child(3)")) {
             $("body .content").append($("<p>").text(blogText));
-            $("body .content").append($("<p><a href = 'blog-list.html'>- Blog Index -</a></p>"));
+            $("body .content").append($("<p><a href = 'blog/blog-index.html'>- Blog Index -</a></p>"));
             $("body .content").hide().fadeIn();
         } else if ($(element).parent().is(":nth-child(4)")) {
             contact.forEach(function (info) {
@@ -47,12 +51,12 @@ var main = function() {
 
 
       });
-
+    //increases fontSize and fontweight when you hover over tabs
       $(element).on('mouseover', function(event){
           event.preventDefault()
           $(element).css({"fontSize":"1.25em", "fontWeight": "bold"})
       });
-
+    //returns tabs back to normal when the mouse leaves
       $(element).on('mouseleave', function(event) {
         event.preventDefault()
         $(element).css({"fontSize": "1em", "font-weight": "normal"})
@@ -60,9 +64,10 @@ var main = function() {
 
   });
 
-//fades in social media links and increases size of social media link when it is hovered over
+//fades in social media links
   $('.socialnet div img').hide().delay(fadeInTime*3).fadeIn(1000);
 
+//increases size of social media link when it is hovered over
   $('.socialnet div img').on('mouseover', function(event){
     event.preventDefault()
     $(this).css({"width": "4em"});

@@ -91,24 +91,97 @@ var main = function () {
       //hides new_athlete from screen so that it can fadeIn
       $new_athlete.hide();
       //adds a new lane for the athlete you enter
-      $(".racetrack").append($new_athlete);
+      $(".player1").append($new_athlete);
       $new_athlete.fadeIn();
       //empties out the input box
       $(".name-input input").val("");
+      $(".name-input").hide();
+      $(".character-choices").fadeIn("fast");
     }
   }
 
-  //adds athlete to lane upon clicking button
+// hides selection of characters (revealed after name is input)
+$(".character-choices").hide()
+
+//hides div until you've chosen name and character -- remember to fade this in
+  $(".player1").hide()
+
+//stores players name after clicking on "+" button
   $(".name-input button").on("click", function (event) {
       addAthleteFromInputBox();
   });
 
-  //adds athlete to lane after hitting enter
+//stores players name after hitting enter on keyboard
   $(".name-input input").on("keypress", function(event) {
     if(event.keyCode === 13) {
       addAthleteFromInputBox();
     }
   });
+
+//enlarges character icon upon mouseover
+$(".character-choices div img").on('mouseover', function(event){
+  event.preventDefault()
+  $(this).css({"width": "5em"});
+});
+
+//returns character icon back to normal size after mouseleave
+
+$(".character-choices div img").on("mouseleave", function(event){
+  event.preventDefault();
+  $(this).css({"width":"3em"});
+});
+
+$(".character-choices div img").on("click", function(event){
+  event.preventDefault();
+  $(".character-choices").hide();
+  $(".player1").prepend($(this));
+  $(".player1").fadeIn("fast");
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//NOTE: these movements can be refactored into a Case WHen statement(look at codeAcademy jQuery)
+//move down
+  $(document).keydown(function(event){
+    if(event.keyCode === 40){
+      $(".player1").animate({top:"+=10px"}, "fast");
+    }
+  });
+
+//move up
+  $(document).keydown(function(event){
+    if(event.keyCode === 38) {
+      $(".player1").animate({top:"-=10px"}, "fast");
+    };
+  })
+
+//move right
+
+  $(document).keydown(function(event){
+    if(event.keyCode === 39) {
+      $(".player1").animate({left:"+=10px"}, "fast");
+    };
+  })
+
+//move left
+  $(document).keydown(function(event){
+    if(event.keyCode === 37) {
+      $(".player1").animate({left: "-=10px"}, "fast");
+    };
+  })
+
 
 
 }

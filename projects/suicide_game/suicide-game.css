@@ -7,19 +7,40 @@ header, main, footer {
   min-width: 855px;
 }
 
+header {
+  text-align: center;
+  margin-bottom:20px;
+}
+
 .name-input {
-  float:left;
-  width:285px;
+  text-align: center;
 }
 
-.racetrack {
-  float:right;
-  width:570px;
+.character-choices {
+  text-align:center;
 }
 
-.racetrack p:nth-child(even) {
-  background: lavender;
+.character-choices h3 {
+  margin-bottom: 20px;
 }
-.racetrack p:nth-child(odd) {
-  background: gainsboro;
+
+.character-choices div{
+  text-align: center;
+  position: relative;
+  display:inline;
+  margin-right: 30px;
+}
+
+.character-choices div img {
+  width:3em;
+}
+
+.player1 {
+    height: 75px;
+    width: 75px;
+    border-radius: 10px;
+   /* background-color: #FF0000;*/
+    position: relative;
+    /*color:white;*/
+    text-align:center;
 }
