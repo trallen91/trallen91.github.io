@@ -1,0 +1,14 @@
+body {
+  background-color: red;
+}
+
+.mountain td {
+  height: 100px;
+  width: 100px;
+  border: 1px solid blue;
+}
+
+td.active {
+  background-color: black;
+}
+
