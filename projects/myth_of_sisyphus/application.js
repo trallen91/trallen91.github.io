@@ -1,7 +1,9 @@
 function backToStart() {
-  $start = $("tr:eq(4) td:eq(0)")
-  $start.addClass("active")
-  return $start
+  startRow = $("tr").last().index()
+  startColumn = $("td").first().index();
+  $startPosition = $("tr:eq("+startRow+") td:eq("+startColumn+")")
+  $startPosition.addClass("active")
+  return $startPosition
 }
 
 function moveUp() {
