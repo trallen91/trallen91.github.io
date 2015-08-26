@@ -20,5 +20,10 @@ function moveUp() {
 }
 
 $(document).ready(function() {
-  // backtoStart();
+  backToStart();
+  $(document).on("keyup", function(event){
+    if (event.keyCode == 65) {
+      moveUp()
+    };
+  })
 })
