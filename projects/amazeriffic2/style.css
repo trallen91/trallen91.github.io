@@ -40,14 +40,18 @@ main {
   padding: 30px;
 }
 
-main .reasons {
-  float:left;
-  width: 570px;
+.tabs a span {
+  display: inline-block;
+  border-radius: 5px 5px 0 0;
+  width: 100px;
+  margin-right: 10px;
+  text-align: center;
+  background: #ddd;
+  padding: 5px;
 }
 
-main .pic {
-  float: right;
-  width: 285px;
+.tabs a span.active {
+  background: #eee;
 }
 
 footer {
