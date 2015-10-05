@@ -1,14 +1,28 @@
-body {
-  background-color: red;
+.mountain {
+  margin-top: 100px;
+  /*width: 80%;
+  height: 80%;*/
 }
-
 .mountain td {
-  height: 50px;
-  width: 50px;
+  height: 80px;
+  width: 80px;
   border: 1px solid blue;
 }
 
 td.active {
-  background-color: black;
+   background-image: url("http://www.queensu.ca/qpfa/image_files/sisyphus.png");
+  background-size: 80px 80px;
+  background-repeat: no-repeat;
+  padding: 0px;
+}
+
+.question_and_answer {
+  margin-left: 300px;
+  margin-right: 300px;
+}
+.question_and_answer td {
+  height: 80px;
+  width: 80px;
+  border: 1px solid blue;
 }
 
