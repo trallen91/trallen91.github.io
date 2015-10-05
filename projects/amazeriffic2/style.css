@@ -1,0 +1,79 @@
+body {
+  background: #f9e933;
+  font-family: "Droid Sans";
+  font-size: 100%;
+}
+
+header, main, footer {
+  min-width: 855px;
+}
+
+header .container, main .container, footer .container {
+  max-width: 855px;
+  margin: auto;
+}
+
+header {
+  background: white;
+  overflow: auto;
+  font-family: "Ubuntu";
+  border-bottom: 1px solid gray;
+  padding: 30px;
+}
+
+header h1 {
+  float:left;
+  width:570px;
+  font-size: 3em;
+  font-style: italic;
+}
+
+header nav {
+  float: right;
+  width: 285px;
+}
+
+main {
+  background: white;
+  overflow: auto;
+  border-bottom: 1px solid gray;
+  padding: 30px;
+}
+
+main .reasons {
+  float:left;
+  width: 570px;
+}
+
+main .pic {
+  float: right;
+  width: 285px;
+}
+
+footer {
+  overflow: auto;
+  border-bottom: 1px solid gray;
+  padding: 30px;
+}
+
+footer .contact {
+  float:left;
+  width: 570px;
+}
+
+footer .sitemap {
+  float: right;
+  width: 285px;
+  overflow:auto;
+}
+
+footer .sitemap .left {
+  float: left;
+  width: 140px;
+}
+
+footer .sitemap .right {
+  float:right;
+  width: 140px;
+}
+
