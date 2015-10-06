@@ -1,0 +1,9 @@
+[
+  {
+  "description" : "Get Groceries",
+  "tags" : ["shopping", "chores"]
+  },
+  {"description" : "Go to Yoga",
+  "tags" : ["mental health"]
+  }
+]
